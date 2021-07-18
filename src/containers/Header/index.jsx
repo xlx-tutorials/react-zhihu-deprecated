@@ -21,10 +21,10 @@ function Header() {
 				css={css`
 					display: flex;
 					align-items: center;
-					min-height: 80px;
+					min-height: 70px;
 					overflow: hidden;
 					flex-wrap: wrap;
-					padding: 8px 12px;
+					padding: 0 12px;
 					max-width: 1200px;
 					margin: 0 auto;
 				`}
