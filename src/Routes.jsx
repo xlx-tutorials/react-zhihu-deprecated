@@ -5,7 +5,8 @@ import DemoPage from './containers/DemoPage'
 function Routes() {
 	return (
 		<Router>
-			<HomePage path='/' />
+			<HomePage path='/' title='首页 - 知乎' />
+			<HomePage path='/follow' title='首页 - 知乎' />
 			<DemoPage path='/demo' />
 		</Router>
 	)

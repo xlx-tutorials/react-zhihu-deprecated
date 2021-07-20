@@ -1,9 +1,10 @@
 import { rgba } from 'polished'
 
-const PALETTE = {
+const palette = {
 	primary: 'rgb(0, 102, 255)',
 	red: 'rgb(241, 64, 60)',
 	textgray: '#8590a6',
+	lightgray: 'rgb(246, 246, 246)',
 	black: {
 		100: '#121212',
 		90: rgba('#121212', 0.9),
@@ -32,13 +33,32 @@ const PALETTE = {
 }
 
 const colors = {
-	primary: PALETTE.primary,
-	danger: PALETTE.red,
-	hint: PALETTE.textgray,
-	black: PALETTE.black,
-	white: PALETTE.white,
+	primary: palette.primary,
+	danger: palette.red,
+	hint: palette.textgray,
+	black: palette.black,
+	white: palette.white,
+	background: palette.lightgray,
+}
+
+const fontSize = {
+	caption: '12px',
+	body: '14px',
+	headline: '16px',
+	title: '18px',
+}
+
+const boxShadow = {
+	card: `0 2px 4px ${colors.black[10]};`,
+}
+
+const border = {
+	divider: `1px solid ${colors.black[6]}`,
 }
 
 export const THEME = {
 	colors,
+	fontSize,
+	boxShadow,
+	border,
 }

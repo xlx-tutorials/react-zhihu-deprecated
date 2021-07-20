@@ -12,7 +12,7 @@ function Header() {
 		<div
 			className='Header'
 			css={css`
-				box-shadow: 0 2px 4px ${THEME.colors.black[20]};
+				box-shadow: ${THEME.boxShadow.card};
 				background: ${THEME.colors.white[100]};
 			`}
 		>
@@ -45,7 +45,7 @@ function Header() {
 						color: ${THEME.colors.hint};
 						align-self: normal;
 						flex: 0.8 0 auto;
-            flex-wrap: wrap;
+						flex-wrap: wrap;
 
 						a {
 							color: currentColor;
@@ -94,9 +94,9 @@ function Header() {
 							color: ${THEME.colors.black[80]};
 						}
 
-            button {
-              flex-shrink: 0;
-            }
+						button {
+							flex-shrink: 0;
+						}
 					`}
 				>
 					<input className='input' type='text' placeholder='搜索答案' />
@@ -129,8 +129,8 @@ function Header() {
 						display: flex;
 						align-items: center;
 						color: ${THEME.colors.hint};
-            flex: .6;
-            justify-content: flex-end;
+						flex: 0.6;
+						justify-content: flex-end;
 
 						& > * {
 							margin: 0 12px;
