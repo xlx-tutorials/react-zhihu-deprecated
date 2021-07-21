@@ -4,8 +4,9 @@ import SvgLogo from '../../components/svgs/SvgLogo'
 import SvgMessage from '../../components/svgs/SvgMessage'
 import SvgNotification from '../../components/svgs/SvgNotification'
 import SvgSearch from '../../components/svgs/SvgSearch'
-import { THEME } from '../../constants/theme'
+import THEME from '../../constants/theme'
 import { navigation } from './constants'
+import { RiContrastLine } from 'react-icons/ri'
 
 function Header() {
 	return (
@@ -42,7 +43,7 @@ function Header() {
 					className='navigation'
 					css={css`
 						display: flex;
-						color: ${THEME.colors.hint};
+						color: ${THEME.colors.secondary};
 						align-self: normal;
 						flex: 0.8 0 auto;
 						flex-wrap: wrap;
@@ -128,7 +129,7 @@ function Header() {
 					css={css`
 						display: flex;
 						align-items: center;
-						color: ${THEME.colors.hint};
+						color: ${THEME.colors.secondary};
 						flex: 0.6;
 						justify-content: flex-end;
 
@@ -146,8 +147,15 @@ function Header() {
 							height: 100%;
 							object-fit: cover;
 						}
+
+						.theme {
+							color: ${THEME.colors.secondary};
+						}
 					`}
 				>
+					<button className='theme'>
+						<RiContrastLine size={22} />
+					</button>
 					<div className='notification'>
 						<SvgNotification />
 					</div>

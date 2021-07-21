@@ -1,10 +1,9 @@
-import { rgba } from 'polished'
+import { darken, rgba } from 'polished'
 
 const palette = {
 	primary: 'rgb(0, 102, 255)',
 	red: 'rgb(241, 64, 60)',
 	textgray: '#8590a6',
-	gray: '#f6f6f6',
 	lightgray: 'rgb(246, 246, 246)',
 	get black() {
 		const base = '#121212'
@@ -40,14 +39,13 @@ const palette = {
 }
 
 const colors = {
-	primary: palette.primary,
+	primary: darken(0.8, palette.primary),
 	secondary: palette.textgray,
 	danger: palette.red,
-	text: palette.black,
-	background: palette.gray,
+	background: palette.lightgray,
 	block: palette.white.base,
-	black: palette.black,
-	white: palette.white,
+	white: palette.black,
+	black: palette.white,
 }
 
 const fontSize = {
@@ -65,11 +63,11 @@ const border = {
 	divider: `1px solid ${colors.black[6]}`,
 }
 
-const THEME = {
+const DARK_THEME = {
 	colors,
 	fontSize,
 	boxShadow,
 	border,
 }
 
-export default THEME
+export default DARK_THEME

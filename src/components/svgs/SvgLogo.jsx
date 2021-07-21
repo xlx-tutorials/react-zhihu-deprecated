@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { THEME } from '../../constants/theme'
+import THEME from '../../constants/theme'
 
 function SvgLogo(props) {
 	return (

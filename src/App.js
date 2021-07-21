@@ -1,34 +1,22 @@
-import { css, Global } from '@emotion/react'
-import { normalize } from 'polished'
 import React from 'react'
-import { THEME } from './constants/theme'
+import GlobalCSS from './components/GlobalCSS'
+import DARK_THEME from './constants/darkTheme'
+import THEME from './constants/theme'
+import { ThemeProvider } from './contexts/ThemeContext'
 import Routes from './Routes'
 
 function App() {
 	return (
-		<>
+		<ThemeProvider
+			themes={{
+				theme: THEME,
+				darkTheme: DARK_THEME,
+			}}
+			defaultThemeKey='theme'
+		>
 			<Routes />
-			<Global
-				styles={css`
-					${normalize()}
-
-					html {
-						box-sizing: border-box;
-					}
-					*,
-					*:before,
-					*:after {
-						box-sizing: inherit;
-					}
-
-					html,
-					body {
-						background-color: rgb(246, 246, 246);
-						color: ${THEME.colors.black[100]};
-					}
-				`}
-			/>
-		</>
+			<GlobalCSS />
+		</ThemeProvider>
 	)
 }
 

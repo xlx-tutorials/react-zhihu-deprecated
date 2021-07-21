@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { darken } from 'polished'
-import { THEME } from '../../../constants/theme'
+import THEME from '../../../constants/theme'
 
 export const ContentContainer = styled.div`
 	background: ${THEME.colors.white[100]};
