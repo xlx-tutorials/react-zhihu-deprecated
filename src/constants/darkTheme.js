@@ -39,11 +39,12 @@ const palette = {
 }
 
 const colors = {
-	primary: darken(0.8, palette.primary),
+	primary: palette.primary,
 	secondary: palette.textgray,
 	danger: palette.red,
-	background: palette.lightgray,
-	block: palette.white.base,
+	text: palette.white.base,
+	background: palette.black[90],
+	block: palette.black[80],
 	white: palette.black,
 	black: palette.white,
 }

@@ -14,6 +14,7 @@ function GlobalCSS() {
 				body {
 					background: ${theme.colors.background};
 					color: ${theme.colors.text};
+					transition: .2s ;
 				}
 
 				html {

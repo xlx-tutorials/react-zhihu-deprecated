@@ -1,20 +1,23 @@
 import { css } from '@emotion/react'
 import { size } from 'polished'
+import { RiContrastLine } from 'react-icons/ri'
 import SvgLogo from '../../components/svgs/SvgLogo'
 import SvgMessage from '../../components/svgs/SvgMessage'
 import SvgNotification from '../../components/svgs/SvgNotification'
 import SvgSearch from '../../components/svgs/SvgSearch'
-import THEME from '../../constants/theme'
+import { useDarkMode, useTheme } from '../../contexts/ThemeContext'
 import { navigation } from './constants'
-import { RiContrastLine } from 'react-icons/ri'
 
 function Header() {
+	const { theme } = useTheme()
+	const { toggle } = useDarkMode()
+
 	return (
 		<div
 			className='Header'
 			css={css`
-				box-shadow: ${THEME.boxShadow.card};
-				background: ${THEME.colors.white[100]};
+				box-shadow: ${theme.boxShadow.card};
+				background: ${theme.colors.block};
 			`}
 		>
 			<div
@@ -43,7 +46,7 @@ function Header() {
 					className='navigation'
 					css={css`
 						display: flex;
-						color: ${THEME.colors.secondary};
+						color: ${theme.colors.secondary};
 						align-self: normal;
 						flex: 0.8 0 auto;
 						flex-wrap: wrap;
@@ -58,10 +61,10 @@ function Header() {
 						}
 
 						a.active {
-							color: ${THEME.colors.black[100]};
+							color: ${theme.colors.text};
 							font-weight: bold;
-							/* border-bottom: 3px solid ${THEME.colors.primary}; */
-							box-shadow: 0 -4px 0 ${THEME.colors.primary} inset;
+							/* border-bottom: 3px solid ${theme.colors.primary}; */
+							box-shadow: 0 -4px 0 ${theme.colors.primary} inset;
 						}
 					`}
 				>
@@ -85,14 +88,14 @@ function Header() {
 
 						input {
 							flex: 1;
-							border: 1px solid ${THEME.colors.black[10]};
+							border: 1px solid ${theme.colors.black[10]};
 							border-radius: 100px;
 							padding: 8px 16px;
-							background-color: ${THEME.colors.black[6]};
+							background-color: ${theme.colors.black[6]};
 							margin: 12px;
 							font-size: 14px;
-							background: ${THEME.colors.white[20]};
-							color: ${THEME.colors.black[80]};
+							background: ${theme.colors.white[20]};
+							color: ${theme.colors.black[80]};
 						}
 
 						button {
@@ -106,17 +109,17 @@ function Header() {
 						css={css`
 							margin-left: -40px;
 							margin-right: 30px;
-							color: ${THEME.colors.black[40]};
+							color: ${theme.colors.black[40]};
 						`}
 					/>
 					<button
 						type='button'
 						css={css`
 							padding: 8px 20px;
-							background-color: ${THEME.colors.primary};
+							background-color: ${theme.colors.primary};
 							border: none;
 							border-radius: 100px;
-							color: ${THEME.colors.white[100]};
+							color: ${theme.colors.white.base};
 							font-size: 14px;
 						`}
 					>
@@ -129,7 +132,7 @@ function Header() {
 					css={css`
 						display: flex;
 						align-items: center;
-						color: ${THEME.colors.secondary};
+						color: ${theme.colors.secondary};
 						flex: 0.6;
 						justify-content: flex-end;
 
@@ -149,11 +152,11 @@ function Header() {
 						}
 
 						.theme {
-							color: ${THEME.colors.secondary};
+							color: ${theme.colors.secondary};
 						}
 					`}
 				>
-					<button className='theme'>
+					<button className='theme' onClick={toggle}>
 						<RiContrastLine size={22} />
 					</button>
 					<div className='notification'>

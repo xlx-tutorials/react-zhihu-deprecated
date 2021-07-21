@@ -43,7 +43,7 @@ const colors = {
 	primary: palette.primary,
 	secondary: palette.textgray,
 	danger: palette.red,
-	text: palette.black,
+	text: palette.black.base,
 	background: palette.gray,
 	block: palette.white.base,
 	black: palette.black,
