@@ -1,6 +1,5 @@
 import { css, Global } from '@emotion/react'
 import { normalize } from 'polished'
-import THEME from '../constants/theme'
 import { useTheme } from '../contexts/ThemeContext'
 
 function GlobalCSS() {
